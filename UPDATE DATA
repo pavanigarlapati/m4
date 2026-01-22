@@ -1,0 +1,13 @@
+UPDATE students
+SET age = 21
+WHERE id = 2;
+
+
+
+
+UPDATE students
+SET course = 'AI & ML'
+WHERE course = 'Data Science';
+
+
+
