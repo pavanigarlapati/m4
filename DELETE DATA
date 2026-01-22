@@ -1,0 +1,8 @@
+DELETE FROM students
+WHERE id = 7;
+
+
+
+
+DELETE FROM students
+WHERE age < 20;
