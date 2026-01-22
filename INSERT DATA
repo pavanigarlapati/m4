@@ -1,0 +1,9 @@
+INSERT INTO students (name, email, age, course)
+VALUES
+('Rahul Sharma', 'rahul.sharma@gmail.com', 22, 'Computer Science'),
+('Anita Verma', 'anita.verma@gmail.com', 20, 'Data Science'),
+('Suresh Kumar', 'suresh.kumar@gmail.com', 24, 'Computer Science'),
+('Priya Singh', 'priya.singh@gmail.com', 19, 'Electronics'),
+('Aman Patel', 'aman.patel@gmail.com', 21, 'Mechanical'),
+('Neha Reddy', 'neha.reddy@gmail.com', 23, 'Data Science'),
+('Kiran Das', 'kiran.das@gmail.com', 18, 'Computer Science');
