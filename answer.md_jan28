@@ -1,0 +1,153 @@
+# Schema Design Fundamentals – Relational Databases
+
+## 1. What is Schema Design and What Does a Database Schema Represent?
+
+Schema design is the process of planning and structuring how data will be stored in a relational database.  
+A **database schema** represents the blueprint of the database. It defines:
+
+- Tables
+- Columns
+- Data types
+- Relationships between tables
+- Constraints and rules
+
+Example:  
+A `users` schema may define columns like `id`, `name`, `email`, and rules such as `email` must be unique.
+
+Schema design helps ensure that data is stored in a structured, organized, and meaningful way.
+
+---
+
+## 2. Why Schema Design is Required Before Writing Backend Code
+
+Schema design should be done before backend development because backend logic depends completely on how data is stored.
+
+If schema design is done later:
+- APIs may need frequent changes
+- Data may be duplicated or inconsistent
+- Application logic becomes complex
+
+Example:  
+If you don’t decide relationships early (like users and orders), backend code may incorrectly store multiple copies of user data in the orders table.
+
+Good schema design makes backend code:
+- Simpler
+- More reliable
+- Easier to maintain
+
+---
+
+## 3. Impact of Poor Schema Design
+
+Poor schema design negatively affects:
+
+### Data Consistency
+- Same data stored in multiple places
+- Updates in one place may not reflect elsewhere
+
+### Maintenance
+- Hard to understand tables
+- Difficult to add new features
+
+### Scalability
+- Performance issues with large data
+- Complex queries due to bad relationships
+
+Example:  
+Storing user email inside every order row causes problems when the user changes their email.
+
+---
+
+## 4. Validations in Schema Design and Why Databases Enforce Them
+
+Validations are rules applied to columns to ensure correct and reliable data.
+
+Common validations:
+
+- **NOT NULL** → prevents empty values  
+- **UNIQUE** → avoids duplicate values  
+- **DEFAULT** → assigns default value  
+- **PRIMARY KEY** → uniquely identifies a row  
+
+example:
+email TEXT UNIQUE NOT NULL
+Databases enforce validations to:
+
+Protect data integrity
+
+Prevent invalid data entry
+
+Reduce bugs in backend code
+
+5. Difference Between Database Schema and Database Table
+Schema	Table
+Overall structure of the database	Stores actual data
+Logical blueprint	Physical data storage
+Includes tables, relationships, constraints	Consists of rows and columns
+
+Example:
+
+Schema → design of users, orders, products
+
+Table → users table with rows of user data
+
+6. Why a Table Should Represent Only One Entity
+
+Each table should represent a single real-world entity to follow normalization rules.
+
+Example:
+
+users table → user information
+
+orders table → order information
+
+If a table represents multiple entities:
+
+Data becomes duplicated
+
+Updates become risky
+
+Queries become confusing
+
+7. Why Redundant or Derived Data Should Be Avoided
+
+Redundant data means storing the same information multiple times.
+
+Derived data is data that can be calculated from existing data.
+
+Problems caused:
+
+Data inconsistency
+
+Storage waste
+
+Update errors
+
+Example:
+Avoid storing total_price if it can be calculated from order items.
+
+8. Importance of Choosing Correct Data Types
+
+Choosing the correct data type ensures:
+
+Efficient storage
+
+Faster queries
+
+Accurate data
+
+Examples:
+
+Use INTEGER for age, not TEXT
+
+Use TIMESTAMP for dates
+
+Use BOOLEAN for true/false values
+
+Wrong data types can cause:
+
+Validation issues
+
+Performance problems
+
+Logical errors
