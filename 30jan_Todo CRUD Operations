@@ -3,3 +3,8 @@
   "description": "Practice joins",
   "userId": "user-uuid"
 }
+
+{
+  "success": false,
+  "message": "Error description"
+}
